@@ -58,10 +58,10 @@ def customer_can_afford_pet(customer, new_pet):
 
 # integration tests
 def sell_pet_to_customer(pet_shop, pet, customer):
-    add_pet_to_customer(customer, pet)
-    increase_pets_sold(pet_shop, 1)
-    price = pet["price"]
-    remove_customer_cash(customer, price)
-    add_or_remove_cash(pet_shop, price)
-
+    if pet is not None:
+        add_pet_to_customer(customer, pet)
+        increase_pets_sold(pet_shop, 1)
+        price = pet["price"]
+        remove_customer_cash(customer, price)
+        add_or_remove_cash(pet_shop, price)
     
